@@ -3,19 +3,42 @@ import modelos
 
 app = Flask(__name__)
 
-@app.route("/api/reservacionesglobales", methods=["GET"])
-def get_reservations():
+@app.route("/api/reservacionesidusuario",methods=["GET"])
+def get_reservations_userid():
+    userid = request.args.get('id_usuario')
     reservaciones = []
-    resultado = modelos.obtener_reservaciones()
-    claves = ['id_reservacion', 'id_usuario', 'id_avion', 'id_vuelo', 'asiento', 'fecha_reservacion']
+    resultado = modelos.obtener_reservaciones_idusuario(userid)
+    claves = ['id_reservacion', 'id_usuario','nombre_persona', 'id_avion', 'id_vuelo', 'asiento', 'fecha_reservacion']
 
     for objetos in resultado:
-        list2dic = dict(zip(claves, objetos)) #convertimos la tupla result y la lista claves en un diccionario
+        list2dic = dict(zip(claves, objetos))
         reservaciones.append(list2dic)
 
     return jsonify({"data":reservaciones})
 
+@app.route("/api/informacionusername",methods=["GET"])
+def get_user_info():
+    username = request.args.get('username')
+    informacion_user = []
+    resultado = modelos.obtener_usuario_username(username)
+    claves = ['id_usuario','nombre','edad','username','ciudad']
 
+    informacion_user = dict(zip(claves, resultado))
+    
+    return jsonify({"data":informacion_user})
+
+@app.route("/api/reservacionesavion",methods=["GET"])
+def get_reservations_plane():
+    idavion = request.args.get('id_avion')
+    reservaciones = []
+    resultado = modelos.obtener_reservaciones_avion(idavion)
+    claves = ['id_reservacion', 'id_usuario','nombre_persona', 'id_avion', 'id_vuelo', 'asiento', 'fecha_reservacion']
+
+    for objetos in resultado:
+        list2dic = dict(zip(claves, objetos))
+        reservaciones.append(list2dic)
+    
+    return ({"data": reservaciones})
 
 
 
