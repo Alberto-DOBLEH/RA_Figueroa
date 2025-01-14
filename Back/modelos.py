@@ -1,6 +1,5 @@
 from BD import conexion_bd
 
-#Se usa para obtener las reservaciones por usuario por medio de su id
 def obtener_reservaciones_idusuario(id):
     cnx = conexion_bd()
     cursor = cnx.cursor()
@@ -35,7 +34,7 @@ def obtener_reservaciones_avion(id):
 
     reservaciones = []
 
-    cursor.execute("SELECT * FROM reservaciones WHERE id_avion = %s", id)
+    cursor.execute("SELECT * FROM reservaciones WHERE id_avion = %s", (id,))
     reservaciones = cursor.fetchall()
 
     cursor.close()
@@ -63,7 +62,7 @@ def obtener_vuelos_fecha(fecha):
 
     vuelos = []
 
-    cursor.execute("SELECT * FROM vuelos WHERE fecha_vuelo = %s", fecha)
+    cursor.execute("SELECT * FROM vuelos WHERE fecha_vuelo = %s", (fecha,))
     vuelos = cursor.fetchall()
 
     cursor.close()
@@ -77,7 +76,7 @@ def obtener_vuelos_ciudad(ciudad):
 
     vuelos = []
 
-    cursor.execute("SELECT * FROM vuelos WHERE ciudad_llegada = %s", ciudad)
+    cursor.execute("SELECT * FROM vuelos WHERE ciudad_llegada = %s", (ciudad,))
     vuelos = cursor.fetchall()
 
     cursor.close()
@@ -85,8 +84,54 @@ def obtener_vuelos_ciudad(ciudad):
 
     return vuelos
 
-#def generar_reservacion():
+def generar_reservacion(usuario, nombre, vuelo, asiento, fecha_reservacion):
+    cnx = conexion_bd()
+    cursor = cnx.cursor()
 
-#def eliminar_reservacion
 
-#def editar_reservacion
+    cursor.execute("INSERT INTO reservaciones(id_usuario, nombre_persona, id_vuelo, asiento, fecha_reservacion) VALUES (%s,%s,%s,%s,%s)", (usuario, nombre, vuelo, asiento, fecha_reservacion))
+    cnx.commit()
+
+    cursor.close()
+    cnx.close()
+
+def eliminar_reservacion(reservacion):
+    cnx = conexion_bd()
+    cursor = cnx.cursor()
+
+    cursor.execute("DELETE FROM reservaciones WHERE id_reservacion = %s"(reservacion,))
+    cnx.commit()
+
+    cursor.close()
+    cnx.close()
+
+def editar_reservacion(reservacion, nombre, asiento):
+    cnx = conexion_bd()
+    cursor = cnx.cursor()
+
+    if(nombre is None):
+        cursor.execute("UPDATE ON reservaciones SET asiento = %s WHERE id_reservacion = %s"(asiento, reservacion))
+        cnx.commit()
+    
+    if(asiento is None):
+        cursor.execute("UPDATE ON reservaciones SET nombre_persona = %s WHERE id_reservacion = %s"(nombre, reservacion))
+        cnx.commit()
+
+    cursor.close()
+    cnx.close()
+
+#MODIFICAR USUARIO
+
+#ELIMINAR USUARIO
+
+#AGREGAR USUARIO
+
+#MODIFICAR VUELOS
+
+#ELIMINAR VUELOS
+
+#AGREGAR AVIONES
+
+#MODIFICAR AVIONES
+
+#ELIMINAR AVIONES

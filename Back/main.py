@@ -40,6 +40,18 @@ def get_reservations_plane():
     
     return ({"data": reservaciones})
 
+@app.route("/api/vuelosglobales",methods=["GET"])
+def get_flys():
+    vuelos = []
+    resultado = modelos.obtener_vuelos()
+    claves = ['id_vuelo', 'id_avion', 'fecha_vuelo', 'hora_estimada', 'asientos_disponibles', 'ciudad_salida', 'ciudad_llegada']
+
+    for objetos in resultado:
+        list2dic = dict(zip(claves, objetos))
+        vuelos.append(list2dic)
+
+    return jsonify({"data":vuelos})
+
 
 
 if __name__ == '__main__':
