@@ -94,7 +94,6 @@ def add_user():
         "vuelo": vuelo,
         "asiento": asiento,
         "fecha_reservacion": fecha_reservacion,
-
     }
 
     return jsonify(reservation_dict)

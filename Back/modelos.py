@@ -121,6 +121,15 @@ def editar_reservacion(reservacion, nombre, asiento):
     cnx.close()
 
 #AGREGAR USUARIO
+def agregar_usuario(nombre, edad, username, contraseña, ciudad):
+    cnx = conexion_bd()
+    cursor = cnx.cursor()
+
+    cursor.execute("INSERT INTO usuarios(nombre, edad, username, contraseña, ciudad) VALUES (%s,%s,%s,%s,%s)", (nombre, edad, username, contraseña, ciudad))
+    cnx.commit()
+
+    cursor.close()
+    cnx.close()
 
 #MODIFICAR USUARIO
 
@@ -131,6 +140,15 @@ def editar_reservacion(reservacion, nombre, asiento):
 #ELIMINAR VUELOS
 
 #AGREGAR AVIONES
+def agregar_avion(modelo, fecha_adquisicion, ultimo_chequeo, cantidad_asientos):
+    cnx = conexion_bd()
+    cursor = cnx.cursor()
+
+    cursor.execute("INSERT INTO aviones(modelo, fecha_adquisicion, ultimo_chequeo, cantidad_asientos) VALUES (%s,%s,%s,%s)", (modelo, fecha_adquisicion, ultimo_chequeo, cantidad_asientos))
+    cnx.commit()
+
+    cursor.close()
+    cnx.close()
 
 #MODIFICAR AVIONES
 
