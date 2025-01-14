@@ -120,11 +120,11 @@ def editar_reservacion(reservacion, nombre, asiento):
     cursor.close()
     cnx.close()
 
+#AGREGAR USUARIO
+
 #MODIFICAR USUARIO
 
 #ELIMINAR USUARIO
-
-#AGREGAR USUARIO
 
 #MODIFICAR VUELOS
 
