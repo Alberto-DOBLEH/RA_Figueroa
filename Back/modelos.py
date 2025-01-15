@@ -99,23 +99,23 @@ def eliminar_reservacion(reservacion):
     cnx = conexion_bd()
     cursor = cnx.cursor()
 
-    cursor.execute("DELETE FROM reservaciones WHERE id_reservacion = %s"(reservacion,))
+    cursor.execute("DELETE FROM reservaciones WHERE id_reservacion = %s",(reservacion,))
     cnx.commit()
 
     cursor.close()
     cnx.close()
 
-def editar_reservacion(reservacion, nombre, asiento):
+def editar_reservacion(id, nombre, asiento):
+
     cnx = conexion_bd()
     cursor = cnx.cursor()
 
-    if(nombre is None):
-        cursor.execute("UPDATE ON reservaciones SET asiento = %s WHERE id_reservacion = %s"(asiento, reservacion))
-        cnx.commit()
-    
-    if(asiento is None):
-        cursor.execute("UPDATE ON reservaciones SET nombre_persona = %s WHERE id_reservacion = %s"(nombre, reservacion))
-        cnx.commit()
+    cursor.execute("UPDATE reservaciones SET nombre_persona = %s, asiento = %s WHERE (id_reservacion = %s)",(nombre, asiento, id))
+
+    if cursor.rowcount == 0:
+        return "No se encontró la reservación con el ID proporcionado", 404
+
+    cnx.commit()
 
     cursor.close()
     cnx.close()
@@ -132,12 +132,48 @@ def agregar_usuario(nombre, edad, username, contraseña, ciudad):
     cnx.close()
 
 #MODIFICAR USUARIO
+def modificar_usuario(id, nombre, username, contraseña, ciudad):
+    cnx = conexion_bd()
+    cursor = cnx.cursor()
+
+    cursor.execute("UPDATE usuarios SET nombre = %s, username = %s, contraseña = %s, ciudad = %s WHERE id_usuario = %s",(nombre, username, contraseña, ciudad, id))
+    cnx.commit()
+
+    cursor.close()
+    cnx.close()
 
 #ELIMINAR USUARIO
+def eliminar_usuario(id):
+    cnx = conexion_bd()
+    cursor = cnx.cursor()
+
+    cursor.execute("DELETE FROM usuarios WHERE id_usuario = %s",(id,))
+    cnx.commit()
+
+    cursor.close()
+    cnx.close()
 
 #MODIFICAR VUELOS
+def modificar_vuelos(id, fecha, hora):
+    cnx = conexion_bd()
+    cursor = cnx.cursor()
+    
+    cursor.execute("UPDATE vuelos SET fecha = %s, hora = %s WHERE id_vuelo = %s",(fecha, hora, id))
+    cnx.commit()
+
+    cursor.close()
+    cnx.close()
 
 #ELIMINAR VUELOS
+def eliminar_vuelo(id):
+    cnx = conexion_bd()
+    cursor = cnx.cursor()
+
+    cursor.execute("DELETE FROM vuelos WHERE id_vuelo = %s",(id,))
+    cnx.commit()
+
+    cursor.close()
+    cnx.close()
 
 #AGREGAR AVIONES
 def agregar_avion(modelo, fecha_adquisicion, ultimo_chequeo, cantidad_asientos):
@@ -151,5 +187,23 @@ def agregar_avion(modelo, fecha_adquisicion, ultimo_chequeo, cantidad_asientos):
     cnx.close()
 
 #MODIFICAR AVIONES
+def modificar_vuelos(id, modelo , ultimo_chequeo, asientos):
+    cnx = conexion_bd()
+    cursor = cnx.cursor()
+    
+    cursor.execute("UPDATE aviones SET modelo = %s, ultimo_chequeo = %s, cantidad_asientos = %s WHERE id_avion = %s",(modelo, ultimo_chequeo, asientos, id))
+    cnx.commit()
+
+    cursor.close()
+    cnx.close()
 
 #ELIMINAR AVIONES
+def eliminar_aviones(id):
+    cnx = conexion_bd()
+    cursor = cnx.cursor()
+
+    cursor.execute("DELETE FROM aviones WHERE id_avion = %s",(id,))
+    cnx.commit()
+
+    cursor.close()
+    cnx.close()
