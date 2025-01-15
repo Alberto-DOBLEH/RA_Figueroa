@@ -2,17 +2,29 @@
 using System.Net.Http;
 using System.Text;
 using System.Text.Json;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace RA_Figueroa_Front
 {
     public class Usuario
     {
+        [JsonPropertyName("id_usuario")]
         public int IdUsuario { get; set; }
+
+        [JsonPropertyName("nombre")]
         public string? Nombre { get; set; }
+
+        [JsonPropertyName("edad")]
         public int Edad { get; set; }
+
+        [JsonPropertyName("username")]
         public string? Username { get; set; }
+
+        [JsonPropertyName("password")]
         public string? Password { get; set; }
+
+        [JsonPropertyName("ciudad")]
         public string? Ciudad { get; set; }
     }
 
@@ -27,14 +39,14 @@ namespace RA_Figueroa_Front
         {
             try
             {
-                string url = BuildUrl("agregarusuarios");
+                string url = BuildUrl("agregarusuario");
 
                 var datos = new
                 {
                     nombre = usuario.Nombre,
                     edad = usuario.Edad,
                     usuario = usuario.Username,
-                    contraseña = usuario.Password, 
+                    contraseña = usuario.Password,
                     ciudad = usuario.Ciudad
                 };
 
@@ -77,11 +89,16 @@ namespace RA_Figueroa_Front
                     // Leer el contenido de la respuesta como JSON
                     string responseContent = await response.Content.ReadAsStringAsync();
 
-                    // Deserializar el JSON a un objeto Usuario
-                    Usuario? usuario = JsonSerializer.Deserialize<Usuario>(responseContent);
+                    var jsonResponse = JsonSerializer.Deserialize<JsonDocument>(responseContent);
+                    if (jsonResponse != null && jsonResponse.RootElement.TryGetProperty("data", out JsonElement dataElement))
+                    {
+                        Usuario? usuario = JsonSerializer.Deserialize<Usuario>(dataElement.GetRawText());
+                        Console.WriteLine("Usuario consultado con éxito.");
+                        return usuario;
+                    }
 
-                    Console.WriteLine("Usuario consultado con éxito.");
-                    return usuario;
+                    Console.WriteLine("No se encontró la clave 'data' en la respuesta.");
+                    return null;
                 }
                 else
                 {

@@ -21,11 +21,11 @@ def get_reservations_userid(id):
 def get_user_info(username):
     informacion_user = []
     resultado = modelos.obtener_usuario_username(username)
-    claves = ['id_usuario','nombre','edad','username','ciudad']
+    claves = ['id_usuario','nombre','edad','username','password','ciudad']
 
     informacion_user = dict(zip(claves, resultado))
     
-    return jsonify({"data":informacion_user})
+    return jsonify({"data":informacion_user})   
 
 @app.route("/api/reservacionesavion/<id>",methods=["GET"])
 def get_reservations_plane(id):
@@ -150,7 +150,15 @@ def add_user():
 
     modelos.agregar_usuario(nombre, edad, usuario, contraseña, ciudad)
 
-    return jsonify({"message": "Usuario creado correctamente"}), 200
+    datos_dict={
+        'nombre' : nombre,
+        'edad' : edad,
+        'usuario' : usuario,
+        'contraseña' : contraseña,
+        'ciudad' : ciudad
+    }
+
+    return jsonify(datos_dict,{"message": "Usuario creado correctamente"}), 200
 
 @app.route("/api/editarusuario/<int:id>", methods=["PUT"])
 def user_edit(id):

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("RA_Figueroa_Front")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3a94fdd6eca3a6f36a64a5cb0bc5bd692cab6bb4")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+20980ef992595988952464866b0f2b8d9dc70ba8")]
 [assembly: System.Reflection.AssemblyProductAttribute("RA_Figueroa_Front")]
 [assembly: System.Reflection.AssemblyTitleAttribute("RA_Figueroa_Front")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

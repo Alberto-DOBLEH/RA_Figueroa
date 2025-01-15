@@ -8,20 +8,24 @@ namespace RA_Figueroa_Front
         }
         private async void button1_Click(object sender, EventArgs e)
         {
-            pagina_principal pagina_Principal = new pagina_principal();
+            pagina_principal form_principal = new pagina_principal();
             try
             {
-                string password = pass.Text;
+                string contra = pass.Text;
                 string username = user.Text; // Username del usuario a consultar
 
                 Usuario? usuario = await UsuarioService.ConsultarUsuarioAsync(username);
 
                 if (usuario != null)
                 {
-                    if(usuario.Password == password)
+                    if (usuario.Password == contra)
                     {
-                        pagina_Principal.Show();
-                        this.Close();
+                        form_principal.Show();
+                        this.Hide();
+                    }
+                    else
+                    {
+                        MessageBox.Show("La contraseña es incorrecta");
                     }
                 }
                 else
@@ -36,5 +40,11 @@ namespace RA_Figueroa_Front
             }
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            registro form2 = new registro(this); // Pasar la referencia del formulario principal
+            form2.Show();
+            this.Hide(); // Ocultar el formulario principal
+        }
     }
 }

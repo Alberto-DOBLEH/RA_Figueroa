@@ -20,7 +20,7 @@ def obtener_usuario_username(username):
 
     perfil = []
 
-    cursor.execute("SELECT id_usuario,nombre,edad,username,ciudad FROM usuarios WHERE username = %s", (username,))
+    cursor.execute("SELECT * FROM usuarios WHERE username = %s", (username,))
     perfil = cursor.fetchone()
 
     cursor.close()
@@ -124,7 +124,7 @@ def editar_reservacion(id, nombre, asiento):
 def agregar_usuario(nombre, edad, username, contraseña, ciudad):
     cnx = conexion_bd()
     cursor = cnx.cursor()
-
+    
     cursor.execute("INSERT INTO usuarios(nombre, edad, username, contraseña, ciudad) VALUES (%s,%s,%s,%s,%s)", (nombre, edad, username, contraseña, ciudad))
     cnx.commit()
 
