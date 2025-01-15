@@ -3,8 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\djmin\\Desktop\\RA_Figueroa\\Front\\RA_Figueroa_Front\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{A8AC7082-E48C-40AB-9E6A-650449C07F19}|RA_Figueroa_Front.csproj|c:\\users\\djmin\\desktop\\ra_figueroa\\front\\ra_figueroa_front\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A8AC7082-E48C-40AB-9E6A-650449C07F19}|RA_Figueroa_Front.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A8AC7082-E48C-40AB-9E6A-650449C07F19}|RA_Figueroa_Front.csproj|c:\\users\\djmin\\desktop\\ra_figueroa\\front\\ra_figueroa_front\\clase_usuarios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A8AC7082-E48C-40AB-9E6A-650449C07F19}|RA_Figueroa_Front.csproj|solutionrelative:clase_usuarios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A8AC7082-E48C-40AB-9E6A-650449C07F19}|RA_Figueroa_Front.csproj|c:\\users\\djmin\\desktop\\ra_figueroa\\front\\ra_figueroa_front\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{A8AC7082-E48C-40AB-9E6A-650449C07F19}|RA_Figueroa_Front.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A8AC7082-E48C-40AB-9E6A-650449C07F19}|RA_Figueroa_Front.csproj|c:\\users\\djmin\\desktop\\ra_figueroa\\front\\ra_figueroa_front\\pagina_principal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{A8AC7082-E48C-40AB-9E6A-650449C07F19}|RA_Figueroa_Front.csproj|solutionrelative:pagina_principal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A8AC7082-E48C-40AB-9E6A-650449C07F19}|RA_Figueroa_Front.csproj|c:\\users\\djmin\\desktop\\ra_figueroa\\front\\ra_figueroa_front\\registro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{A8AC7082-E48C-40AB-9E6A-650449C07F19}|RA_Figueroa_Front.csproj|solutionrelative:registro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -23,14 +39,64 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Form1.cs [Design]",
+              "Title": "Form1.cs",
               "DocumentMoniker": "C:\\Users\\djmin\\Desktop\\RA_Figueroa\\Front\\RA_Figueroa_Front\\Form1.cs",
               "RelativeDocumentMoniker": "Form1.cs",
-              "ToolTip": "C:\\Users\\djmin\\Desktop\\RA_Figueroa\\Front\\RA_Figueroa_Front\\Form1.cs [Design]",
-              "RelativeToolTip": "Form1.cs [Design]",
+              "ToolTip": "C:\\Users\\djmin\\Desktop\\RA_Figueroa\\Front\\RA_Figueroa_Front\\Form1.cs",
+              "RelativeToolTip": "Form1.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAADwvxAAAABYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-13T21:04:35.833Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-01-15T05:03:11.68Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Form1.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\djmin\\Desktop\\RA_Figueroa\\Front\\RA_Figueroa_Front\\Form1.cs",
+              "RelativeDocumentMoniker": "Form1.cs",
+              "ToolTip": "C:\\Users\\djmin\\Desktop\\RA_Figueroa\\Front\\RA_Figueroa_Front\\Form1.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Form1.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-15T04:17:38.984Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "clase_usuarios.cs",
+              "DocumentMoniker": "C:\\Users\\djmin\\Desktop\\RA_Figueroa\\Front\\RA_Figueroa_Front\\clase_usuarios.cs",
+              "RelativeDocumentMoniker": "clase_usuarios.cs",
+              "ToolTip": "C:\\Users\\djmin\\Desktop\\RA_Figueroa\\Front\\RA_Figueroa_Front\\clase_usuarios.cs",
+              "RelativeToolTip": "clase_usuarios.cs",
+              "ViewState": "AgIAADEAAAAAAAAAAAAwwGAAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-15T04:22:51.131Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "registro.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\djmin\\Desktop\\RA_Figueroa\\Front\\RA_Figueroa_Front\\registro.cs",
+              "RelativeDocumentMoniker": "registro.cs",
+              "ToolTip": "C:\\Users\\djmin\\Desktop\\RA_Figueroa\\Front\\RA_Figueroa_Front\\registro.cs [Dise\u00F1o]",
+              "RelativeToolTip": "registro.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-15T04:21:53.164Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "pagina_principal.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\djmin\\Desktop\\RA_Figueroa\\Front\\RA_Figueroa_Front\\pagina_principal.cs",
+              "RelativeDocumentMoniker": "pagina_principal.cs",
+              "ToolTip": "C:\\Users\\djmin\\Desktop\\RA_Figueroa\\Front\\RA_Figueroa_Front\\pagina_principal.cs [Dise\u00F1o]",
+              "RelativeToolTip": "pagina_principal.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-15T04:15:33.708Z",
+              "EditorCaption": " [Dise\u00F1o]"
             }
           ]
         }
